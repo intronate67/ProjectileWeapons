@@ -40,28 +40,17 @@ public class ProjectileWeapons extends JavaPlugin {
 
     private void addRecipes(){
         ShapedRecipe tntBow = new ShapedRecipe(tntBow());
-        tntBow.shape("", "", "",
-                " T ", " G ", " T ",
-                "", "", ""
-        );
+        tntBow.shape("TGT");
         tntBow.setIngredient('T', Material.TNT);
         tntBow.setIngredient('G', Material.SULPHUR);
-        tntBow.shape(new String[]{"", "", "",
-                " T ", " G ", " T ",
-                "", "" , ""});
+        tntBow.shape(new String[]{"TGT"});
         getServer().addRecipe(tntBow);
 
         ShapedRecipe tntAmmo = new ShapedRecipe(tntAmmo());
-        tntAmmo.shape("", "", "",
-                " T ", " F ", " T ",
-                "", "", ""
-        );
+        tntAmmo.shape("TFT");
         tntAmmo.setIngredient('T', Material.TNT);
-        tntAmmo.setIngredient('G', Material.FIREBALL);
-        tntAmmo.shape(new String[]{"", "", "",
-                " T ", " G ", " T",
-                "", "", ""
-                });
+        tntAmmo.setIngredient('F', Material.FIREBALL);
+        tntAmmo.shape(new String[]{"TFT"});
         getServer().addRecipe(tntAmmo);
     }
 
