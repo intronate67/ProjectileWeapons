@@ -3,6 +3,7 @@ package main.java.net.huntersharpe.pw;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -17,7 +18,15 @@ import java.util.List;
  */
 public class ProjectileWeapons extends JavaPlugin {
 
+    public FileConfiguration config = getConfig();
+
     public void onEnable(){
+
+        if(!getDataFolder().exists()){
+            getDataFolder().mkdir();
+            saveDefaultConfig();
+            saveConfig();
+        }
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new BowListener(), this);
