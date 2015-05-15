@@ -18,12 +18,9 @@ import java.util.List;
  */
 public class ProjectileWeapons extends JavaPlugin {
 
-
-
     public FileConfiguration config = getConfig();
 
     public void onEnable(){
-
         if(!getDataFolder().exists()){
             getDataFolder().mkdir();
             saveDefaultConfig();
@@ -56,8 +53,8 @@ public class ProjectileWeapons extends JavaPlugin {
         getServer().addRecipe(tntAmmo);
     }
 
-    private ItemStack tntBow(){
-        ItemStack tntBow = new ItemStack(Material.BOW);
+    public ItemStack tntBow(){
+        ItemStack tntBow = new ItemStack(Material.BOW, (byte) 4);
         ItemMeta tntMeta = tntBow.getItemMeta();
         tntMeta.setDisplayName(ChatColor.RED + "TNT Bow");
         List<String> s = new ArrayList<String>();
@@ -67,8 +64,8 @@ public class ProjectileWeapons extends JavaPlugin {
         return tntBow;
     }
 
-    private ItemStack tntAmmo() {
-        ItemStack tntAmmo = new ItemStack(Material.ARROW);
+    public ItemStack tntAmmo() {
+        ItemStack tntAmmo = new ItemStack(Material.ARROW, (byte) 4);
         ItemMeta tntMeta = tntAmmo.getItemMeta();
         tntMeta.setDisplayName(ChatColor.GREEN + "TNT Bow Ammo");
         List<String> s = new ArrayList<String>();
