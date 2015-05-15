@@ -18,6 +18,8 @@ import java.util.List;
  */
 public class ProjectileWeapons extends JavaPlugin {
 
+
+
     public FileConfiguration config = getConfig();
 
     public void onEnable(){
